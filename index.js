@@ -99,14 +99,10 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(originalFlavors,item){
-    for(let i=0; i=originalFlavors.length ; i--){
-    if(originalFlavors[i]===item){
-        return originalFlavors[item];
-      }
-     }
+//Not Working
+function getFlavorByIndex() {
+  console.log(originalFlavors[15]);
 }
-console.log(getFlavorByIndex(originalFlavors,9));
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -124,7 +120,7 @@ function removeFlavorByName(originalFlavors,name){
     let removename=originalFlavors.pop(name);
     return removename;
 }
-console.log(removeFlavorByName(originalFlavors,"Vainilla"));
+console.log(removeFlavorByName(originalFlavors,"Peach"));
 console.log(originalFlavors);
 
 
@@ -135,11 +131,11 @@ Your function should accept:
 2 arguments 1 for your new array and one for your original array
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
+function copyFlavors() {
+    let NeworiginalFlavors = originalFlavors.slice();
+    console.log(NeworiginalFlavors.length);
+  }
 
-function copy (originalFlavors){
-return originalFlavors.slice(2);
-}
-console.log(copy(originalFlavors))
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
 Your function should accept: 
